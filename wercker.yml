@@ -32,7 +32,7 @@ push-quay:
     - internal/docker-scratch-push:
         username: $QUAY_USERNAME
         password: $QUAY_TOKEN
-        tag:  latest, $MY_RELEASE_TAG, $WERCKER_GIT_COMMIT
+        tag:  latest $MY_RELEASE_TAG $WERCKER_GIT_COMMIT
         repository: quay.io/stepanstipl/dron
         registry: https://quay.io
         author: Stepan Stipl
