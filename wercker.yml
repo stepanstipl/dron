@@ -29,7 +29,7 @@ push-quay:
         code: |
           export MY_RELEASE_TAG="v$(cat $WERCKER_ROOT/.release_tag)" && \
           echo "Release tag: ${MY_RELEASE_TAG}"
-    - internal/docker-push:
+    - internal/docker-scratch-push:
         username: $QUAY_USERNAME
         password: $QUAY_TOKEN
         tag:  latest, $MY_RELEASE_TAG, $WERCKER_GIT_COMMIT
