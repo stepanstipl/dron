@@ -23,6 +23,7 @@ push-github:
         file: dron-linux-amd64.tar.gz
         content_type: application/x-gzip
 push-quay:
+  box: canopytax/alpine
   steps:
     - script:
         name: restore release tag
@@ -30,10 +31,11 @@ push-quay:
           export MY_RELEASE_TAG="$(cat $WERCKER_ROOT/.release_tag)" && \
           echo "Release tag: ${MY_RELEASE_TAG}"
           export MY_RELEASE_SHA="$(cat $WERCKER_ROOT/.release_sha)" && \
-          echo "Git sha: ${MY_RELEASE_SHA}"
+          echo "Release sha: ${MY_RELEASE_SHA}"
     - internal/docker-scratch-push:
         username: $QUAY_USERNAME
         password: $QUAY_TOKEN
+        disable-sync: false
         tag:  latest $MY_RELEASE_TAG $MY_RELEASE_SHA
         repository: quay.io/stepanstipl/dron
         registry: https://quay.io
