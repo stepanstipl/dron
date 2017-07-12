@@ -28,7 +28,7 @@ RELEASE_SHA=$(git rev-parse --short HEAD)
 echo "${RELEASE_TAG}" > "${WERCKER_OUTPUT_DIR}/.release_sha"
 
 # Build
-CGO_ENABLED=0 go build  -ldflags "-s -X main.version=${RELEASE_TAG} -X main.git_sha=$(RELEASE_SHA)" -v "${APP}.go"
+CGO_ENABLED=0 go build  -ldflags "-s -X main.version=${RELEASE_TAG} -X main.git_sha=$(RELEASE_SHA)" -v "cmd/${APP}.go"
 
 # Test
 go test $(glide novendor)
