@@ -1,0 +1,4 @@
+vendor/*
+.wercker/*
+.idea/*
+dron

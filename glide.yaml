@@ -1,0 +1,10 @@
+package: github.com/stepanstipl/dron
+import:
+- package: github.com/spf13/viper
+- package: github.com/docker/docker
+  version: ^17.5.0-ce-rc3
+  subpackages:
+  - client
+- package: github.com/bububa/cron
+- package: github.com/sirupsen/logrus
+- package: github.com/mattn/go-shellwords
