@@ -16,8 +16,8 @@ var (
 
 func main() {
 	// Configure logging
-	log.SetFormatter(&log.TextFormatter{ForceColors: true})
-	log.SetLevel(log.DebugLevel)
+	log.SetFormatter(&log.TextFormatter{})
+	log.SetLevel(log.InfoLevel)
 	log.SetOutput(os.Stdout)
 
 	log.Infof("Starting dcron version %s.", version)
