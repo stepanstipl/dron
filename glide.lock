@@ -1,12 +1,12 @@
-hash: 8a90465048c21094793c30e55ec0d5aafa512ecfba06c9080e523c6d8ec94974
-updated: 2017-07-12T10:06:49.323481+01:00
+hash: 20770f19fbaaec35fa495a438c86cac39d59a63eabe82bf28805527e67c55717
+updated: 2017-08-16T11:43:40.615781+01:00
 imports:
 - name: github.com/bububa/cron
   version: c0f1743e5d72367595ecbfd7548c6cb7721699ae
 - name: github.com/docker/distribution
-  version: f86db6b22663a27ba4d278220b7e34be528b1e79
+  version: 48294d928ced5dd9b378f7fd7c6f5da3ff3f2c89
   subpackages:
-  - digestset
+  - digest
   - reference
 - name: github.com/docker/docker
   version: 90d35abf7b3535c1c319c872900fbd76374e521c
@@ -41,29 +41,29 @@ imports:
 - name: github.com/docker/go-units
   version: 0dadbb0345b35ec7ef35e228dabb8de89a65bf52
 - name: github.com/docker/libtrust
-  version: aabc10ec26b754e797f9028f4589c5b7bd90dc20
-- name: github.com/mattn/go-shellwords
-  version: 02e3cf038dcea8290e44424da473dd12be796a8a
+  version: fa567046d9b14f6aa788882a950d69651d230b21
+- name: github.com/mgutz/str
+  version: 968bf66e3da857419e4f6e71b2d5c9ae95682dc4
 - name: github.com/Microsoft/go-winio
-  version: f533f7a102197536779ea3a8cb881d639e21ec5a
-- name: github.com/opencontainers/go-digest
-  version: 279bed98673dd5bef374d3b6e4b09e2af76183bf
+  version: 78439966b38d69bf38227fbf57ac8a6fee70f69a
 - name: github.com/pkg/errors
   version: c605e284fe17294bda444b34710735b29d1a9d90
 - name: github.com/Sirupsen/logrus
-  version: 7f976d3a76720c4c27af2ba716b85d2e0a7e38b1
+  version: 55eb11d21d2a31a3cc93838241d04800f52e823d
+  subpackages:
+  - formatters/logstash
 - name: github.com/sirupsen/logrus
-  version: 7f976d3a76720c4c27af2ba716b85d2e0a7e38b1
+  version: a3f95b5c423586578a4e099b11a46c2479628cac
 - name: github.com/spf13/viper
-  version: c1de95864d73a5465492829d7cb2dd422b19ac96
+  version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
 - name: golang.org/x/net
-  version: 054b33e6527139ad5b1ec2f6232c3b175bd9a30c
+  version: 4876518f9e71663000c348837735820161a42df7
   subpackages:
   - context
   - context/ctxhttp
   - proxy
 - name: golang.org/x/sys
-  version: abf9c25f54453410d0c6668e519582a9e1115027
+  version: d8f5ea21b9295e315e612b4bcf4bedea93454d4d
   subpackages:
   - unix
   - windows

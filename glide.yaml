@@ -7,4 +7,5 @@ import:
   - client
 - package: github.com/bububa/cron
 - package: github.com/sirupsen/logrus
-- package: github.com/mattn/go-shellwords
+- package: github.com/mgutz/str
+  version: v1.2.0

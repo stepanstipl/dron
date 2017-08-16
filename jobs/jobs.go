@@ -10,7 +10,7 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
 	"github.com/docker/docker/pkg/stdcopy"
-	"github.com/mattn/go-shellwords"
+	"github.com/mgutz/str"
 )
 
 const LABEL_PREFIX = "cron"
@@ -40,11 +40,9 @@ func BuildFromLabels(cId string, labels map[string]string) CronTab {
 			// Parse based on label type
 			switch lt {
 			case command:
-				args, err := shellwords.Parse(v)
-				if err != nil {
-					log.WithFields(log.Fields{"container-id": cId}).Warnf("Unable to parse command %s", v)
-					break
-				}
+				log.Debugf("Args %s", v)
+				args := str.ToArgv(v)
+				log.Debugf("Parsed args %s", strings.Join(args, "; "))
 				ct[jobName].Args = args
 			case schedule:
 				ct[jobName].Schedule = v
@@ -78,6 +76,7 @@ func parseJobLabel(k string) (bool, string, LabelType) {
 // Execute job
 func (c *CronJob) Run() {
 	clog := log.WithFields(log.Fields{"container-id": c.ContainerId, "job": c.JobId})
+	clog.Debugf("Running job %s, command %s", c.JobId, c.Args)
 	// Run job
 	ctx := context.Background()
 	cli, err := client.NewEnvClient()
